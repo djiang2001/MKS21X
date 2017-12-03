@@ -1,10 +1,10 @@
-java.import.util.Iterator;
+import java.util.Iterator;
 
-public class SuperArrayIterator implements Iterator<Strings>{
+public class SuperArrayIterator implements Iterator<String>{
   private int current, end;
   private SuperArray data;
 
-  public SuperArrayIterator(String input){
+  public SuperArrayIterator(SuperArray input){
     data = input;
     current = 0;
     end = input.size()-1;
@@ -16,7 +16,7 @@ public class SuperArrayIterator implements Iterator<Strings>{
     return data.get(current - 1);
   }
 
-    public boolean hasNext(){
-  return current <=  end;
-    }
+  public boolean hasNext(){
+    return current <=  end;
+  }
 }
