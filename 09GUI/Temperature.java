@@ -45,6 +45,7 @@ public class Temperature extends JFrame implements ActionListener{
     b2 = new JButton("Clear");
     cf = new JRadioButton("Celsius to Fahrenheit");
     fc = new JRadioButton("Fahrenheit to Celsius");
+    fc.setSelected(true);
     B.add(cf);
     B.add(fc);
 
@@ -52,7 +53,7 @@ public class Temperature extends JFrame implements ActionListener{
     b2.addActionListener(this);
     cf.addActionListener(this);
     fc.addActionListener(this);
-    
+    t.addActionListener(this);
     pane.add(l);
     pane.add(t);
     pane.add(b1);
@@ -63,11 +64,11 @@ public class Temperature extends JFrame implements ActionListener{
   }
 
   public static double CtoF(double t){
-    return t * 1.4 + 32;
+    return t * 1.8  + 32;
   }
 
   public static double FtoC(double t){
-    return (t - 32) * 5.0 / 9.0 ;
+    return (t - 32) * 5 / 9 ;
   }
 
 
