@@ -1,3 +1,4 @@
+/*Crystal Wang helped me with solving issues for tests 3 and 6*/
 import java.util.*;
 public class OrderedSuperArray extends SuperArray{
   //--Constructors--//
@@ -45,7 +46,6 @@ public class OrderedSuperArray extends SuperArray{
     int start = 0;
     int end = size();
     int mid = end / 2;
-
     while (start != end) {
       if (value.compareTo(get(mid)) > 0) {
         start = mid+1;
@@ -195,7 +195,8 @@ public class OrderedSuperArray extends SuperArray{
 public static boolean equals(OrderedSuperArray s, ArrayList<String> a){
     if(s.size() == a.size()){
       for(int i = 0; i < s.size(); i++){
-        if(s.get(i) != a.get(i)){
+        if(!s.get(i).equals( a.get(i))){
+
           return false;
         }
       }
@@ -203,6 +204,7 @@ public static boolean equals(OrderedSuperArray s, ArrayList<String> a){
     }
     return false;
   }
+
 
     public static void main(String[]args){
 	runTest02(0);
@@ -213,6 +215,18 @@ public static boolean equals(OrderedSuperArray s, ArrayList<String> a){
 	runTest02(5);
 	runTest02(6);
 	runTest02(7);
+  OrderedSuperArray s1 = new OrderedSuperArray();
+  ArrayList<String> s2 = new ArrayList<>();
+     s1.add("1");
+      s2.add("1");
+      for(int i = 0; i < 10; i ++){
+        String v = ""+(int)(Math.random()*1000);
+        int in = (int)(Math.random()*s2.size());
+        s1.add(in,v);
+        s2.add(in,v);
+    }
+      System.out.println(s1);
+      System.out.println(s2);
     }
 
 }
