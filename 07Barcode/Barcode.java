@@ -44,10 +44,10 @@ public class Barcode implements Comparable<Barcode>{
 
   
   public static String toZip(String code){
-    if(code.length() > 32){
+    if(code.length() != 32){
       throw new IllegalArgumentException();
     }
-    if(code.charAt(0) != '|' && code.charAt(code.length()) != '|'){
+    if(code.charAt(0) != '|' || code.charAt(code.length()-1) != '|'){
       throw new IllegalArgumentException();
     }
     code = code.substring(1, code.length()-1);
