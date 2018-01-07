@@ -1,6 +1,7 @@
 /*Crystal Wang helped me with solving issues for tests 3 and 6*/
 import java.util.*;
 public class OrderedSuperArray extends SuperArray{
+  
   //--Constructors--//
   public OrderedSuperArray(){
     super();
@@ -12,7 +13,7 @@ public class OrderedSuperArray extends SuperArray{
 
   public OrderedSuperArray(String[] ary){
     super();
-    for(int i = 0; i < this.size(); i++){
+    for(int i = 0; i < ary.length; i++){
       add(ary[i]);
     }
   }
@@ -20,7 +21,7 @@ public class OrderedSuperArray extends SuperArray{
   //--Methods--//
 
   public void add(int index, String value){
-    super.add(index,value);
+    add(value);
   }
 
 
@@ -204,29 +205,5 @@ public static boolean equals(OrderedSuperArray s, ArrayList<String> a){
     }
     return false;
   }
-
-
-    public static void main(String[]args){
-	runTest02(0);
-	runTest02(1);
-	runTest02(2);
-	runTest02(3);
-	runTest02(4);
-	runTest02(5);
-	runTest02(6);
-	runTest02(7);
-  OrderedSuperArray s1 = new OrderedSuperArray();
-  ArrayList<String> s2 = new ArrayList<>();
-     s1.add("1");
-      s2.add("1");
-      for(int i = 0; i < 10; i ++){
-        String v = ""+(int)(Math.random()*1000);
-        int in = (int)(Math.random()*s2.size());
-        s1.add(in,v);
-        s2.add(in,v);
-    }
-      System.out.println(s1);
-      System.out.println(s2);
-    }
 
 }
